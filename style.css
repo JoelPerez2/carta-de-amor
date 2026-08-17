@@ -1,0 +1,697 @@
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "Segoe UI", Tahoma, sans-serif;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #68185f 0%,
+            #321039 35%,
+            #140719 75%,
+            #08030d 100%
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   ESTRELLAS
+========================================= */
+
+.stars {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+
+    background-size: 80px 80px, 130px 130px;
+
+    background-position: 0 0, 40px 60px;
+
+    opacity: 0.25;
+
+    animation: estrellas 12s linear infinite;
+}
+
+
+@keyframes estrellas {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(80px);
+    }
+}
+
+
+/* =========================================
+   PANTALLA INICIAL
+========================================= */
+
+.inicio {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+
+    position: relative;
+
+    z-index: 2;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+.sobre {
+
+    width: min(650px, 95%);
+
+    padding: 55px 35px;
+
+    text-align: center;
+
+    border-radius: 35px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.2);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 0 60px rgba(255, 50, 170, 0.25);
+
+    animation: aparecer 1.5s ease;
+}
+
+
+.corazon-principal {
+
+    font-size: 90px;
+
+    margin-bottom: 10px;
+
+    animation: latido 1.3s infinite;
+
+    filter:
+        drop-shadow(0 0 20px #ff4aa8);
+}
+
+
+.pequeno {
+
+    color: #f7b7dc;
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+
+.sobre h1 {
+
+    font-size: clamp(35px, 7vw, 60px);
+
+    margin-bottom: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff9fd5,
+            #ffffff,
+            #d99cff
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+.descripcion {
+
+    max-width: 500px;
+
+    margin: 0 auto 30px;
+
+    line-height: 1.7;
+
+    color: #f3d8ed;
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   BOTÓN
+========================================= */
+
+button {
+
+    border: none;
+
+    outline: none;
+
+    padding: 16px 32px;
+
+    border-radius: 50px;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3d9a,
+            #9b4dca
+        );
+
+    box-shadow:
+        0 0 20px rgba(255, 61, 154, 0.45);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+
+button:hover {
+
+    transform:
+        scale(1.08)
+        translateY(-3px);
+
+    box-shadow:
+        0 0 35px rgba(255, 61, 154, 0.8);
+}
+
+
+button:active {
+
+    transform: scale(0.95);
+}
+
+
+/* =========================================
+   CORAZONES FLOTANTES
+========================================= */
+
+.hearts {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+.hearts span {
+
+    position: absolute;
+
+    bottom: -60px;
+
+    font-size: 25px;
+
+    opacity: 0;
+
+    animation:
+        subir 9s linear infinite;
+}
+
+
+.hearts span:nth-child(1) {
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.hearts span:nth-child(2) {
+    left: 15%;
+    animation-delay: 2s;
+}
+
+.hearts span:nth-child(3) {
+    left: 27%;
+    animation-delay: 4s;
+}
+
+.hearts span:nth-child(4) {
+    left: 38%;
+    animation-delay: 1s;
+}
+
+.hearts span:nth-child(5) {
+    left: 50%;
+    animation-delay: 5s;
+}
+
+.hearts span:nth-child(6) {
+    left: 62%;
+    animation-delay: 3s;
+}
+
+.hearts span:nth-child(7) {
+    left: 73%;
+    animation-delay: 6s;
+}
+
+.hearts span:nth-child(8) {
+    left: 82%;
+    animation-delay: 1.5s;
+}
+
+.hearts span:nth-child(9) {
+    left: 91%;
+    animation-delay: 4.5s;
+}
+
+.hearts span:nth-child(10) {
+    left: 45%;
+    animation-delay: 7s;
+}
+
+
+/* =========================================
+   CARTA
+========================================= */
+
+.carta-container {
+
+    min-height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 60px 20px;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+.carta {
+
+    width: min(850px, 100%);
+
+    padding: 55px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffaff,
+            #ffeaf6
+        );
+
+    color: #4d2143;
+
+    box-shadow:
+        0 0 70px rgba(255, 70, 170, 0.35);
+
+    animation:
+        cartaAparecer 1.4s ease;
+}
+
+
+.corazon-carta {
+
+    text-align: center;
+
+    font-size: 55px;
+
+    margin-bottom: 10px;
+
+    animation: flotar 2s ease-in-out infinite;
+}
+
+
+.carta h2 {
+
+    text-align: center;
+
+    font-size: clamp(28px, 5vw, 45px);
+
+    color: #8d2874;
+
+    margin-bottom: 20px;
+}
+
+
+.linea {
+
+    width: 75%;
+
+    height: 2px;
+
+    margin: 0 auto 35px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d64b9a,
+            transparent
+        );
+}
+
+
+.carta p {
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    margin-bottom: 22px;
+
+    text-align: justify;
+}
+
+
+.saludo {
+
+    font-size: 25px !important;
+
+    color: #9c367d;
+
+    font-weight: bold;
+}
+
+
+.mensaje-especial {
+
+    text-align: center !important;
+
+    font-size: 29px !important;
+
+    font-weight: bold;
+
+    color: #d63384;
+
+    margin: 35px 0;
+
+    animation: brillo 2s infinite;
+}
+
+
+.separador-corazones {
+
+    text-align: center;
+
+    font-size: 28px;
+
+    letter-spacing: 8px;
+
+    margin: 30px 0;
+}
+
+
+.firma {
+
+    text-align: right;
+
+    font-style: italic;
+
+    margin-top: 40px;
+}
+
+
+.firma strong {
+
+    color: #c02f7e;
+
+    font-size: 20px;
+}
+
+
+#volver {
+
+    display: block;
+
+    margin: 30px auto 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9b4dca,
+            #d63384
+        );
+}
+
+
+/* =========================================
+   EXPLOSIÓN DE CORAZONES
+========================================= */
+
+.explosion-heart {
+
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 999;
+
+    font-size: 25px;
+
+    animation:
+        explosion 1.2s ease-out forwards;
+}
+
+
+@keyframes explosion {
+
+    0% {
+
+        transform:
+            translate(0, 0)
+            scale(0.5);
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            )
+            rotate(360deg)
+            scale(1.3);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(60px)
+            scale(0.8);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes latido {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+
+@keyframes subir {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translateY(-115vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes cartaAparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(100px)
+            scale(0.85);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes flotar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+@keyframes brillo {
+
+    0%,
+    100% {
+        text-shadow:
+            0 0 5px rgba(214, 51, 132, 0.2);
+    }
+
+    50% {
+        text-shadow:
+            0 0 25px rgba(214, 51, 132, 0.7);
+    }
+}
+
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+    .sobre {
+
+        padding:
+            40px 20px;
+    }
+
+
+    .corazon-principal {
+
+        font-size: 70px;
+    }
+
+
+    .carta {
+
+        padding:
+            35px 22px;
+    }
+
+
+    .carta p {
+
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+
+    .mensaje-especial {
+
+        font-size: 23px;
+    }
+
+
+    .carta h2 {
+
+        font-size: 29px;
+    }
+}
