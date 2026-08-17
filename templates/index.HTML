@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para el amor de mi vida ❤️</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Fondo animado -->
+    <div class="stars"></div>
+
+    <div class="hearts">
+        <span>❤️</span>
+        <span>💜</span>
+        <span>💕</span>
+        <span>❤️</span>
+        <span>💗</span>
+        <span>💜</span>
+        <span>💕</span>
+        <span>❤️</span>
+    </div>
+
+    <!-- Pantalla inicial -->
+    <section id="inicio" class="inicio">
+
+        <div class="sobre">
+            <div class="corazon">❤️</div>
+
+            <h1>Para ti, mi amor</h1>
+
+            <p>
+                Tengo algo muy especial que quiero decirte...
+            </p>
+
+            <button onclick="abrirCarta()">
+                Abrir mi carta ❤️
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- Carta -->
+    <section id="carta" class="carta-container">
+
+        <div class="carta">
+
+            <div class="decoracion">💜</div>
+
+            <h1>Para la persona que amo ❤️</h1>
+
+            <div class="linea"></div>
+
+            <p>
+                Mi amor,
+            </p>
+
+            <p>
+                Quiero que sepas lo muchísimo que te amo y lo
+                importante que eres para mí. A veces siento que
+                las palabras no son suficientes para explicar todo
+                lo que llevo dentro, pero aun así quiero intentarlo.
+            </p>
+
+            <p>
+                Desde que llegaste a mi vida, has conseguido hacer
+                que muchos momentos sean más especiales. Tu sonrisa,
+                tu forma de ser y cada pequeño detalle tuyo tienen
+                un lugar muy especial en mi corazón.
+            </p>
+
+            <p>
+                Gracias por estar conmigo, por compartir momentos,
+                por hacerme sonreír y simplemente por ser tú.
+                No necesito que seas perfecta, porque para mí lo
+                maravilloso es que seas exactamente como eres.
+            </p>
+
+            <p>
+                Quiero seguir creando recuerdos contigo, reírnos
+                juntos, apoyarnos cuando las cosas sean difíciles
+                y disfrutar cada momento que podamos compartir.
+            </p>
+
+            <p class="especial">
+                Te amo muchísimo. ❤️
+            </p>
+
+            <p>
+                Y si alguna vez dudas de cuánto significas para mí,
+                recuerda que hay alguien que piensa en ti, que te
+                aprecia y que se siente muy feliz de tenerte en su vida.
+            </p>
+
+            <p class="firma">
+                Con todo mi amor,<br>
+                <span>Tu persona favorita ❤️</span>
+            </p>
+
+            <div class="corazones-final">
+                ❤️ 💜 ❤️ 💜 ❤️
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
